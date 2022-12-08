@@ -141,3 +141,11 @@ export const addUser = (user) => {
     return response.data;
   });
 };
+
+export const getCouponCodeDetails = (code) => {
+  let url = `${baseURL}/couponcodes?filters[code][$eq]=${code}`;
+
+  return axios.get(url).then((response) => {
+    return response.data;
+  });
+};
